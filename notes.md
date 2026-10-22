@@ -48,3 +48,11 @@ An ID selector (#main p) has a higher specificity weight (1,0,1) than a class an
 | 8 | `bugs.css`: Missing semicolon after `background: #0b1f3a` in `.btn:hover` | DevTools Styles Pane | Added missing semicolon `;` after color value |
 | 9 | `bugs.css`: Class selector `.notes` mismatched HTML class `note` | DevTools Elements Pane | Renamed selector to `.note`[cite: 1] |
 | 10 | `bugs.css`: Muted note text `#999999` had insufficient contrast | Lighthouse Audit | Darkened color to `#595959` to pass contrast threshold[cite: 1] |
+
+
+## Live site observations (Lab 4, Task 7)
+
+1. **Compare localhost with live site:** Localhost used plain HTTP on `127.0.0.1:5500` without encryption[cite: 1]. The live site uses HTTPS over HTTP/2, served by GitHub's CDN servers with SSL encryption[cite: 1].
+2. **Security & Padlock:** The padlock indicates valid SSL/TLS encryption[cite: 1]. On plain HTTP, an attacker on the same Wi-Fi could perform eavesdropping or session hijacking to intercept form data[cite: 1].
+3. **Saved orders isolation:** Web Storage (`localStorage`) is restricted by origin (protocol + domain + port)[cite: 1]. Data stored under `127.0.0.1` is isolated from `github.io`[cite: 1].
+4. **404 Status Code:** Requesting a non-existent path returned a `404 Not Found` status code generated directly by the GitHub Pages web server[cite: 1].
