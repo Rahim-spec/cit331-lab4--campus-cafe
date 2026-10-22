@@ -32,3 +32,19 @@ An ID selector (#main p) has a higher specificity weight (1,0,1) than a class an
 | Attribute | `a[href^="http"]` |
 | Pseudo-class | `a:hover` |
 | Pseudo-element | `.menu-group h2::before` |
+
+
+## Bug log (Lab 4, Task 6)
+
+| # | What was wrong (file and line) | Which tool showed it | My fix |
+|---|--------------------------------|----------------------|--------|
+| 1 | `bugs.html`: Missing `lang` attribute on `<html>` tag | Lighthouse / W3C Validator | Added `lang="en"` to `<html>` |
+| 2 | `bugs.html`: Linked stylesheet was `style.css` instead of `bugs.css` | DevTools Network Tab (404) | Fixed `<link>` href to `bugs.css` |
+| 3 | `bugs.html`: Used non-semantic `div` for navigation links | DevTools Accessibility Tree | Changed `div.menu` to `<nav class="menu">` with `aria-label` |
+| 4 | `bugs.html`: Heading level skipped from `h1` to `h4` | DevTools Accessibility Tree | Changed `h4` to `h2` for sequential heading order |
+| 5 | `bugs.html`: `<img>` tag was missing `alt` text attribute | Lighthouse Audit | Added `alt="Campus Café logo"` to `<img>` |
+| 6 | `bugs.html`: `<label for="mail">` did not match `<input id="email">` | DevTools / Manual Click Test | Updated label attribute to `for="email"` |
+| 7 | `bugs.css`: Used invalid CSS property `colour` instead of `color` | DevTools Styles Pane | Fixed property spelling to `color: #ffffff;` |
+| 8 | `bugs.css`: Missing semicolon after `background: #0b1f3a` in `.btn:hover` | DevTools Styles Pane | Added missing semicolon `;` after color value |
+| 9 | `bugs.css`: Class selector `.notes` mismatched HTML class `note` | DevTools Elements Pane | Renamed selector to `.note`[cite: 1] |
+| 10 | `bugs.css`: Muted note text `#999999` had insufficient contrast | Lighthouse Audit | Darkened color to `#595959` to pass contrast threshold[cite: 1] |
